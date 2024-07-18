@@ -39,5 +39,3 @@ for (file in file_list) {
   BinClassMonthly(file, output_path)
 }
 
-# Print success message
-cat("All classified images saved successfully to:", output_path, "\n")
