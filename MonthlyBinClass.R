@@ -17,8 +17,7 @@ ndvi_images <- read_ndvi_images(ndvi_path)
 
 # Function to classify NDVI image using a threshold
 classify_ndvi_image <- function(ndvi_image, threshold = 0.6) {
-  classified_image <- ndvi_image >= threshold
-  classified_image <- classify(classified_image, cbind(0, 1), classes = c("Nonforest", "Forest"))
+  classified_image <- ifel(ndvi_image >= threshold, 2, 1)
   return(classified_image)
 }
 
